@@ -5,4 +5,4 @@ We are making an app  that will enable refugee women to talk to each other about
 This will involve using the woman's current mood, to pair with other refugees she wants to chat with.
 
 ## Team Members:
-Virginia, Mariza, Mohammed, Priya, Char
+Virginia, Mariza, Mohammed, Priya, Char, Delvin
