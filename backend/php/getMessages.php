@@ -1,0 +1,34 @@
+<?php
+	session_start();
+
+	$dbServer = "127.0.0.1";
+	$dbUsername = "emotionsTeam";
+	$dbPassword = "yeswecan";
+	$dbName = "emotions";
+
+	$username = "";
+	$emoticon = "";
+	$msg = "";
+
+	$sql = "SELECT * FROM messages";
+
+	// Create connecion to MySQL server
+	$conn = new mysqli($dbServer, $dbUsername, $dbPassword, $dbName);
+
+	// Check the connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} else {
+		$username = $_SESSION["loggedUser"];
+		$emoticon = $_POST["emoticon"];
+		$msg = $_POST["msg"];
+		
+		if ($conn->query($sql) == TRUE) {
+			echo "Message updated for " . $username;
+		} else {
+			echo $sql . "\n" . $conn->error;
+		}
+	}
+
+
+?>
